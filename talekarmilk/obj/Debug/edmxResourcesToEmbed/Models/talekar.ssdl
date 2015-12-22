@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="talekarModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="talekarModelStoreContainer">
+    <EntitySet Name="TblAbout" EntityType="talekarModel.Store.TblAbout" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="TblAbout">
+    <Key>
+      <PropertyRef Name="about_id" />
+    </Key>
+    <Property Name="about_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="nvarchar" MaxLength="150" />
+    <Property Name="about_content" Type="nvarchar" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,662 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="indrayanimilkModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="indrayanimilkModelStoreContainer">
+          <EntitySet Name="TablPartner" EntityType="indrayanimilkModel.Store.TablPartner" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Tbl_Gallary" EntityType="indrayanimilkModel.Store.Tbl_Gallary" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblAboutDairy" EntityType="indrayanimilkModel.Store.TblAboutDairy" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblAboutDirector" EntityType="indrayanimilkModel.Store.TblAboutDirector" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblAdmin" EntityType="indrayanimilkModel.Store.TblAdmin" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblCareer" EntityType="indrayanimilkModel.Store.TblCareer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblCity" EntityType="indrayanimilkModel.Store.TblCity" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblContact" EntityType="indrayanimilkModel.Store.TblContact" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblCountry" EntityType="indrayanimilkModel.Store.TblCountry" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblDealer" EntityType="indrayanimilkModel.Store.TblDealer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblFranchise" EntityType="indrayanimilkModel.Store.TblFranchise" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblInfrastructure" EntityType="indrayanimilkModel.Store.TblInfrastructure" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblProduct" EntityType="indrayanimilkModel.Store.TblProduct" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblProductPackage" EntityType="indrayanimilkModel.Store.TblProductPackage" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TblState" EntityType="indrayanimilkModel.Store.TblState" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_TblCity_TblState" Association="indrayanimilkModel.Store.FK_TblCity_TblState">
+            <End Role="TblState" EntitySet="TblState" />
+            <End Role="TblCity" EntitySet="TblCity" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblProductPackage_TblProduct" Association="indrayanimilkModel.Store.FK_TblProductPackage_TblProduct">
+            <End Role="TblProduct" EntitySet="TblProduct" />
+            <End Role="TblProductPackage" EntitySet="TblProductPackage" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TblState_TblCountry" Association="indrayanimilkModel.Store.FK_TblState_TblCountry">
+            <End Role="TblCountry" EntitySet="TblCountry" />
+            <End Role="TblState" EntitySet="TblState" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TablPartner">
+          <Key>
+            <PropertyRef Name="part_id" />
+          </Key>
+          <Property Name="part_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="part_name" Type="nvarchar(max)" />
+          <Property Name="part_number" Type="nvarchar(max)" />
+          <Property Name="part_email" Type="nvarchar(max)" />
+          <Property Name="part_company" Type="nvarchar(max)" />
+          <Property Name="part_designation" Type="nvarchar(max)" />
+          <Property Name="part_message" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="Tbl_Gallary">
+          <Key>
+            <PropertyRef Name="img_id" />
+          </Key>
+          <Property Name="img_id" Type="int" Nullable="false" />
+          <Property Name="img_title" Type="nvarchar(max)" />
+          <Property Name="img_image" Type="nvarchar(max)" />
+          <Property Name="img_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblAboutDairy">
+          <Key>
+            <PropertyRef Name="ad_id" />
+          </Key>
+          <Property Name="ad_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ad_title" Type="nvarchar" MaxLength="500" />
+          <Property Name="ad_content" Type="nvarchar" />
+        </EntityType>
+        <EntityType Name="TblAboutDirector">
+          <Key>
+            <PropertyRef Name="dir_id" />
+          </Key>
+          <Property Name="dir_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dir_name" Type="nvarchar(max)" />
+          <Property Name="dir_content" Type="nvarchar(max)" />
+          <Property Name="dir_image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="admin_name" Type="nvarchar(max)" />
+          <Property Name="admin_email" Type="nvarchar(max)" />
+          <Property Name="admin_number" Type="nvarchar(max)" />
+          <Property Name="admin_username" Type="nvarchar(max)" />
+          <Property Name="admin_password" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblCareer">
+          <Key>
+            <PropertyRef Name="job_id" />
+          </Key>
+          <Property Name="job_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="job_title" Type="nvarchar(max)" />
+          <Property Name="job_expereince" Type="nvarchar(max)" />
+          <Property Name="job_description" Type="nvarchar(max)" />
+          <Property Name="job_salary" Type="nvarchar(max)" />
+          <Property Name="job_date_post" Type="nvarchar(max)" />
+          <Property Name="job_last_date" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblCity">
+          <Key>
+            <PropertyRef Name="city_id" />
+          </Key>
+          <Property Name="city_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="state_id" Type="int" />
+          <Property Name="city_name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblContact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fname" Type="nvarchar(max)" />
+          <Property Name="lname" Type="nvarchar(max)" />
+          <Property Name="email" Type="nvarchar(max)" />
+          <Property Name="subject" Type="nvarchar(max)" />
+          <Property Name="mobile" Type="nvarchar(max)" />
+          <Property Name="message" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblCountry">
+          <Key>
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Name="country_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="country_name" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblDealer">
+          <Key>
+            <PropertyRef Name="dealer_id" />
+          </Key>
+          <Property Name="dealer_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="dealer_name" Type="nvarchar(max)" />
+          <Property Name="dealer_number" Type="nvarchar(max)" />
+          <Property Name="dealer_email" Type="nvarchar(max)" />
+          <Property Name="dealer_address" Type="nvarchar(max)" />
+          <Property Name="dealer_pin" Type="nvarchar(max)" />
+          <Property Name="dealer_country" Type="nvarchar(max)" />
+          <Property Name="dealer_state" Type="nvarchar(max)" />
+          <Property Name="dealer_city" Type="nvarchar(max)" />
+          <Property Name="dealer_company" Type="nvarchar(max)" />
+          <Property Name="dealer_fax" Type="nvarchar(max)" />
+          <Property Name="dealer_description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblFranchise">
+          <Key>
+            <PropertyRef Name="fran_id" />
+          </Key>
+          <Property Name="fran_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="fran_name" Type="nvarchar(max)" />
+          <Property Name="fran_number" Type="nvarchar(max)" />
+          <Property Name="fran_email" Type="nvarchar(max)" />
+          <Property Name="fran_address" Type="nvarchar(max)" />
+          <Property Name="fran_pin" Type="nvarchar(max)" />
+          <Property Name="fran_country" Type="nvarchar(max)" />
+          <Property Name="fran_state" Type="nvarchar(max)" />
+          <Property Name="fran_city" Type="nvarchar(max)" />
+          <Property Name="fran_company" Type="nvarchar(max)" />
+          <Property Name="fran_fax" Type="nvarchar(max)" />
+          <Property Name="fran_description" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblInfrastructure">
+          <Key>
+            <PropertyRef Name="infra_id" />
+          </Key>
+          <Property Name="infra_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="infra_title" Type="nvarchar(max)" />
+          <Property Name="infra_content" Type="nvarchar(max)" />
+          <Property Name="infra_image" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblProduct">
+          <Key>
+            <PropertyRef Name="pro_id" />
+          </Key>
+          <Property Name="pro_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="pro_name" Type="nvarchar(max)" />
+          <Property Name="pro_image" Type="nvarchar(max)" />
+          <Property Name="pro_content" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblProductPackage">
+          <Key>
+            <PropertyRef Name="propk_id" />
+          </Key>
+          <Property Name="propk_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="pro_id" Type="int" />
+          <Property Name="pack_type" Type="nvarchar(max)" />
+          <Property Name="pack_prize" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TblState">
+          <Key>
+            <PropertyRef Name="state_id" />
+          </Key>
+          <Property Name="state_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="country_id" Type="int" />
+          <Property Name="state_name" Type="nvarchar(max)" />
+        </EntityType>
+        <Association Name="FK_TblCity_TblState">
+          <End Role="TblState" Type="indrayanimilkModel.Store.TblState" Multiplicity="0..1" />
+          <End Role="TblCity" Type="indrayanimilkModel.Store.TblCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblState">
+              <PropertyRef Name="state_id" />
+            </Principal>
+            <Dependent Role="TblCity">
+              <PropertyRef Name="state_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblProductPackage_TblProduct">
+          <End Role="TblProduct" Type="indrayanimilkModel.Store.TblProduct" Multiplicity="0..1" />
+          <End Role="TblProductPackage" Type="indrayanimilkModel.Store.TblProductPackage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProduct">
+              <PropertyRef Name="pro_id" />
+            </Principal>
+            <Dependent Role="TblProductPackage">
+              <PropertyRef Name="pro_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TblState_TblCountry">
+          <End Role="TblCountry" Type="indrayanimilkModel.Store.TblCountry" Multiplicity="0..1" />
+          <End Role="TblState" Type="indrayanimilkModel.Store.TblState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCountry">
+              <PropertyRef Name="country_id" />
+            </Principal>
+            <Dependent Role="TblState">
+              <PropertyRef Name="country_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="indrayanimilkModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="indrayanimilkEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TablPartners" EntityType="indrayanimilkModel.TablPartner" />
+          <EntitySet Name="Tbl_Gallary" EntityType="indrayanimilkModel.Tbl_Gallary" />
+          <EntitySet Name="TblAboutDairies" EntityType="indrayanimilkModel.TblAboutDairy" />
+          <EntitySet Name="TblAboutDirectors" EntityType="indrayanimilkModel.TblAboutDirector" />
+          <EntitySet Name="TblAdmins" EntityType="indrayanimilkModel.TblAdmin" />
+          <EntitySet Name="TblContacts" EntityType="indrayanimilkModel.TblContact" />
+          <EntitySet Name="TblDealers" EntityType="indrayanimilkModel.TblDealer" />
+          <EntitySet Name="TblFranchises" EntityType="indrayanimilkModel.TblFranchise" />
+          <EntitySet Name="TblInfrastructures" EntityType="indrayanimilkModel.TblInfrastructure" />
+          <EntitySet Name="TblProducts" EntityType="indrayanimilkModel.TblProduct" />
+          <EntitySet Name="TblProductPackages" EntityType="indrayanimilkModel.TblProductPackage" />
+          <AssociationSet Name="FK_TblProductPackage_TblProduct" Association="indrayanimilkModel.FK_TblProductPackage_TblProduct">
+            <End Role="TblProduct" EntitySet="TblProducts" />
+            <End Role="TblProductPackage" EntitySet="TblProductPackages" />
+          </AssociationSet>
+          <EntitySet Name="TblCareers" EntityType="indrayanimilkModel.TblCareer" />
+          <EntitySet Name="TblCountries" EntityType="indrayanimilkModel.TblCountry" />
+          <EntitySet Name="TblStates" EntityType="indrayanimilkModel.TblState" />
+          <AssociationSet Name="FK_TblState_TblCountry" Association="indrayanimilkModel.FK_TblState_TblCountry">
+            <End Role="TblCountry" EntitySet="TblCountries" />
+            <End Role="TblState" EntitySet="TblStates" />
+          </AssociationSet>
+          <EntitySet Name="TblCities" EntityType="indrayanimilkModel.TblCity" />
+          <AssociationSet Name="FK_TblCity_TblState" Association="indrayanimilkModel.FK_TblCity_TblState">
+            <End Role="TblState" EntitySet="TblStates" />
+            <End Role="TblCity" EntitySet="TblCities" />
+          </AssociationSet>
+          </EntityContainer>
+        <EntityType Name="TablPartner">
+          <Key>
+            <PropertyRef Name="part_id" />
+          </Key>
+          <Property Name="part_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="part_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="part_number" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="part_email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="part_company" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="part_designation" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="part_message" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Tbl_Gallary">
+          <Key>
+            <PropertyRef Name="img_id" />
+          </Key>
+          <Property Name="img_id" Type="Int32" Nullable="false" />
+          <Property Name="img_title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="img_image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="img_content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TblAboutDairy">
+          <Key>
+            <PropertyRef Name="ad_id" />
+          </Key>
+          <Property Name="ad_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ad_title" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="ad_content" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TblAboutDirector">
+          <Key>
+            <PropertyRef Name="dir_id" />
+          </Key>
+          <Property Name="dir_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dir_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dir_content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dir_image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TblAdmin">
+          <Key>
+            <PropertyRef Name="admin_id" />
+          </Key>
+          <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="admin_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="admin_email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="admin_number" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="admin_username" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="admin_password" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TblContact">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fname" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="lname" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="subject" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="mobile" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="message" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TblDealer">
+          <Key>
+            <PropertyRef Name="dealer_id" />
+          </Key>
+          <Property Name="dealer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="dealer_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_number" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_pin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_country" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_state" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_city" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_company" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_fax" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="dealer_description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TblFranchise">
+          <Key>
+            <PropertyRef Name="fran_id" />
+          </Key>
+          <Property Name="fran_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="fran_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_number" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_pin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_country" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_state" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_city" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_company" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_fax" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="fran_description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TblInfrastructure">
+          <Key>
+            <PropertyRef Name="infra_id" />
+          </Key>
+          <Property Name="infra_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="infra_title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="infra_content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="infra_image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TblProduct">
+          <Key>
+            <PropertyRef Name="pro_id" />
+          </Key>
+          <Property Name="pro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pro_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="pro_image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="pro_content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TblProductPackages" Relationship="indrayanimilkModel.FK_TblProductPackage_TblProduct" FromRole="TblProduct" ToRole="TblProductPackage" />
+        </EntityType>
+        <EntityType Name="TblProductPackage">
+          <Key>
+            <PropertyRef Name="propk_id" />
+          </Key>
+          <Property Name="propk_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="pro_id" Type="Int32" />
+          <Property Name="pack_type" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="pack_prize" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="TblProduct" Relationship="indrayanimilkModel.FK_TblProductPackage_TblProduct" FromRole="TblProductPackage" ToRole="TblProduct" />
+        </EntityType>
+        <Association Name="FK_TblProductPackage_TblProduct">
+          <End Role="TblProduct" Type="indrayanimilkModel.TblProduct" Multiplicity="0..1" />
+          <End Role="TblProductPackage" Type="indrayanimilkModel.TblProductPackage" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblProduct">
+              <PropertyRef Name="pro_id" />
+            </Principal>
+            <Dependent Role="TblProductPackage">
+              <PropertyRef Name="pro_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TblCareer">
+          <Key>
+            <PropertyRef Name="job_id" />
+          </Key>
+          <Property Type="Int32" Name="job_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="job_title" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="job_expereince" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="job_description" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="job_salary" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="job_date_post" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="job_last_date" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TblCountry">
+          <Key>
+            <PropertyRef Name="country_id" />
+          </Key>
+          <Property Type="Int32" Name="country_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="country_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblStates" Relationship="indrayanimilkModel.FK_TblState_TblCountry" FromRole="TblCountry" ToRole="TblState" />
+          </EntityType>
+        <EntityType Name="TblState">
+          <Key>
+            <PropertyRef Name="state_id" />
+          </Key>
+          <Property Type="Int32" Name="state_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="country_id" />
+          <Property Type="String" Name="state_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblCountry" Relationship="indrayanimilkModel.FK_TblState_TblCountry" FromRole="TblState" ToRole="TblCountry" />
+          <NavigationProperty Name="TblCities" Relationship="indrayanimilkModel.FK_TblCity_TblState" FromRole="TblState" ToRole="TblCity" />
+        </EntityType>
+        <Association Name="FK_TblState_TblCountry">
+          <End Type="indrayanimilkModel.TblCountry" Role="TblCountry" Multiplicity="0..1" />
+          <End Type="indrayanimilkModel.TblState" Role="TblState" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblCountry">
+              <PropertyRef Name="country_id" />
+            </Principal>
+            <Dependent Role="TblState">
+              <PropertyRef Name="country_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TblCity">
+          <Key>
+            <PropertyRef Name="city_id" />
+          </Key>
+          <Property Type="Int32" Name="city_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="state_id" />
+          <Property Type="String" Name="city_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TblState" Relationship="indrayanimilkModel.FK_TblCity_TblState" FromRole="TblCity" ToRole="TblState" />
+        </EntityType>
+        <Association Name="FK_TblCity_TblState">
+          <End Type="indrayanimilkModel.TblState" Role="TblState" Multiplicity="0..1" />
+          <End Type="indrayanimilkModel.TblCity" Role="TblCity" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TblState">
+              <PropertyRef Name="state_id" />
+            </Principal>
+            <Dependent Role="TblCity">
+              <PropertyRef Name="state_id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="indrayanimilkModelStoreContainer" CdmEntityContainer="indrayanimilkEntities">
+          <EntitySetMapping Name="TablPartners">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TablPartner">
+              <MappingFragment StoreEntitySet="TablPartner">
+                <ScalarProperty Name="part_id" ColumnName="part_id" />
+                <ScalarProperty Name="part_name" ColumnName="part_name" />
+                <ScalarProperty Name="part_number" ColumnName="part_number" />
+                <ScalarProperty Name="part_email" ColumnName="part_email" />
+                <ScalarProperty Name="part_company" ColumnName="part_company" />
+                <ScalarProperty Name="part_designation" ColumnName="part_designation" />
+                <ScalarProperty Name="part_message" ColumnName="part_message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tbl_Gallary">
+            <EntityTypeMapping TypeName="indrayanimilkModel.Tbl_Gallary">
+              <MappingFragment StoreEntitySet="Tbl_Gallary">
+                <ScalarProperty Name="img_id" ColumnName="img_id" />
+                <ScalarProperty Name="img_title" ColumnName="img_title" />
+                <ScalarProperty Name="img_image" ColumnName="img_image" />
+                <ScalarProperty Name="img_content" ColumnName="img_content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAboutDairies">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblAboutDairy">
+              <MappingFragment StoreEntitySet="TblAboutDairy">
+                <ScalarProperty Name="ad_id" ColumnName="ad_id" />
+                <ScalarProperty Name="ad_title" ColumnName="ad_title" />
+                <ScalarProperty Name="ad_content" ColumnName="ad_content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAboutDirectors">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblAboutDirector">
+              <MappingFragment StoreEntitySet="TblAboutDirector">
+                <ScalarProperty Name="dir_id" ColumnName="dir_id" />
+                <ScalarProperty Name="dir_name" ColumnName="dir_name" />
+                <ScalarProperty Name="dir_content" ColumnName="dir_content" />
+                <ScalarProperty Name="dir_image" ColumnName="dir_image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblAdmins">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblAdmin">
+              <MappingFragment StoreEntitySet="TblAdmin">
+                <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+                <ScalarProperty Name="admin_name" ColumnName="admin_name" />
+                <ScalarProperty Name="admin_email" ColumnName="admin_email" />
+                <ScalarProperty Name="admin_number" ColumnName="admin_number" />
+                <ScalarProperty Name="admin_username" ColumnName="admin_username" />
+                <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblContacts">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblContact">
+              <MappingFragment StoreEntitySet="TblContact">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="fname" ColumnName="fname" />
+                <ScalarProperty Name="lname" ColumnName="lname" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="subject" ColumnName="subject" />
+                <ScalarProperty Name="mobile" ColumnName="mobile" />
+                <ScalarProperty Name="message" ColumnName="message" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblDealers">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblDealer">
+              <MappingFragment StoreEntitySet="TblDealer">
+                <ScalarProperty Name="dealer_id" ColumnName="dealer_id" />
+                <ScalarProperty Name="dealer_name" ColumnName="dealer_name" />
+                <ScalarProperty Name="dealer_number" ColumnName="dealer_number" />
+                <ScalarProperty Name="dealer_email" ColumnName="dealer_email" />
+                <ScalarProperty Name="dealer_address" ColumnName="dealer_address" />
+                <ScalarProperty Name="dealer_pin" ColumnName="dealer_pin" />
+                <ScalarProperty Name="dealer_country" ColumnName="dealer_country" />
+                <ScalarProperty Name="dealer_state" ColumnName="dealer_state" />
+                <ScalarProperty Name="dealer_city" ColumnName="dealer_city" />
+                <ScalarProperty Name="dealer_company" ColumnName="dealer_company" />
+                <ScalarProperty Name="dealer_fax" ColumnName="dealer_fax" />
+                <ScalarProperty Name="dealer_description" ColumnName="dealer_description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblFranchises">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblFranchise">
+              <MappingFragment StoreEntitySet="TblFranchise">
+                <ScalarProperty Name="fran_id" ColumnName="fran_id" />
+                <ScalarProperty Name="fran_name" ColumnName="fran_name" />
+                <ScalarProperty Name="fran_number" ColumnName="fran_number" />
+                <ScalarProperty Name="fran_email" ColumnName="fran_email" />
+                <ScalarProperty Name="fran_address" ColumnName="fran_address" />
+                <ScalarProperty Name="fran_pin" ColumnName="fran_pin" />
+                <ScalarProperty Name="fran_country" ColumnName="fran_country" />
+                <ScalarProperty Name="fran_state" ColumnName="fran_state" />
+                <ScalarProperty Name="fran_city" ColumnName="fran_city" />
+                <ScalarProperty Name="fran_company" ColumnName="fran_company" />
+                <ScalarProperty Name="fran_fax" ColumnName="fran_fax" />
+                <ScalarProperty Name="fran_description" ColumnName="fran_description" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblInfrastructures">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblInfrastructure">
+              <MappingFragment StoreEntitySet="TblInfrastructure">
+                <ScalarProperty Name="infra_id" ColumnName="infra_id" />
+                <ScalarProperty Name="infra_title" ColumnName="infra_title" />
+                <ScalarProperty Name="infra_content" ColumnName="infra_content" />
+                <ScalarProperty Name="infra_image" ColumnName="infra_image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProducts">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblProduct">
+              <MappingFragment StoreEntitySet="TblProduct">
+                <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+                <ScalarProperty Name="pro_name" ColumnName="pro_name" />
+                <ScalarProperty Name="pro_image" ColumnName="pro_image" />
+                <ScalarProperty Name="pro_content" ColumnName="pro_content" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblProductPackages">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblProductPackage">
+              <MappingFragment StoreEntitySet="TblProductPackage">
+                <ScalarProperty Name="propk_id" ColumnName="propk_id" />
+                <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+                <ScalarProperty Name="pack_type" ColumnName="pack_type" />
+                <ScalarProperty Name="pack_prize" ColumnName="pack_prize" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCareers">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblCareer">
+              <MappingFragment StoreEntitySet="TblCareer">
+                <ScalarProperty Name="job_last_date" ColumnName="job_last_date" />
+                <ScalarProperty Name="job_date_post" ColumnName="job_date_post" />
+                <ScalarProperty Name="job_salary" ColumnName="job_salary" />
+                <ScalarProperty Name="job_description" ColumnName="job_description" />
+                <ScalarProperty Name="job_expereince" ColumnName="job_expereince" />
+                <ScalarProperty Name="job_title" ColumnName="job_title" />
+                <ScalarProperty Name="job_id" ColumnName="job_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCountries">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblCountry">
+              <MappingFragment StoreEntitySet="TblCountry">
+                <ScalarProperty Name="country_name" ColumnName="country_name" />
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblStates">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblState">
+              <MappingFragment StoreEntitySet="TblState">
+                <ScalarProperty Name="state_name" ColumnName="state_name" />
+                <ScalarProperty Name="country_id" ColumnName="country_id" />
+                <ScalarProperty Name="state_id" ColumnName="state_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TblCities">
+            <EntityTypeMapping TypeName="indrayanimilkModel.TblCity">
+              <MappingFragment StoreEntitySet="TblCity">
+                <ScalarProperty Name="city_name" ColumnName="city_name" />
+                <ScalarProperty Name="state_id" ColumnName="state_id" />
+                <ScalarProperty Name="city_id" ColumnName="city_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,60 @@
+﻿@model talekarmilk.Models.TblProductPackage
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TblProductPackage</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.propk_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.propk_id)
+            @Html.ValidationMessageFor(model => model.propk_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pro_id, "TblProduct")
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("pro_id", String.Empty)
+            @Html.ValidationMessageFor(model => model.pro_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pack_type)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pack_type)
+            @Html.ValidationMessageFor(model => model.pack_type)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.pack_prize)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.pack_prize)
+            @Html.ValidationMessageFor(model => model.pack_prize)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

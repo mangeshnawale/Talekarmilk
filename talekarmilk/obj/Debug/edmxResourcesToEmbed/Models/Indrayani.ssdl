@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="indrayanimilkModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="indrayanimilkModelStoreContainer">
+    <EntitySet Name="TablPartner" EntityType="indrayanimilkModel.Store.TablPartner" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Tbl_Gallary" EntityType="indrayanimilkModel.Store.Tbl_Gallary" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblAboutDairy" EntityType="indrayanimilkModel.Store.TblAboutDairy" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblAboutDirector" EntityType="indrayanimilkModel.Store.TblAboutDirector" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblAdmin" EntityType="indrayanimilkModel.Store.TblAdmin" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblCareer" EntityType="indrayanimilkModel.Store.TblCareer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblCity" EntityType="indrayanimilkModel.Store.TblCity" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblContact" EntityType="indrayanimilkModel.Store.TblContact" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblCountry" EntityType="indrayanimilkModel.Store.TblCountry" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblDealer" EntityType="indrayanimilkModel.Store.TblDealer" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblFranchise" EntityType="indrayanimilkModel.Store.TblFranchise" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblInfrastructure" EntityType="indrayanimilkModel.Store.TblInfrastructure" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblProduct" EntityType="indrayanimilkModel.Store.TblProduct" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblProductPackage" EntityType="indrayanimilkModel.Store.TblProductPackage" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TblState" EntityType="indrayanimilkModel.Store.TblState" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_TblCity_TblState" Association="indrayanimilkModel.Store.FK_TblCity_TblState">
+      <End Role="TblState" EntitySet="TblState" />
+      <End Role="TblCity" EntitySet="TblCity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblProductPackage_TblProduct" Association="indrayanimilkModel.Store.FK_TblProductPackage_TblProduct">
+      <End Role="TblProduct" EntitySet="TblProduct" />
+      <End Role="TblProductPackage" EntitySet="TblProductPackage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TblState_TblCountry" Association="indrayanimilkModel.Store.FK_TblState_TblCountry">
+      <End Role="TblCountry" EntitySet="TblCountry" />
+      <End Role="TblState" EntitySet="TblState" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TablPartner">
+    <Key>
+      <PropertyRef Name="part_id" />
+    </Key>
+    <Property Name="part_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="part_name" Type="nvarchar(max)" />
+    <Property Name="part_number" Type="nvarchar(max)" />
+    <Property Name="part_email" Type="nvarchar(max)" />
+    <Property Name="part_company" Type="nvarchar(max)" />
+    <Property Name="part_designation" Type="nvarchar(max)" />
+    <Property Name="part_message" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Tbl_Gallary">
+    <Key>
+      <PropertyRef Name="img_id" />
+    </Key>
+    <Property Name="img_id" Type="int" Nullable="false" />
+    <Property Name="img_title" Type="nvarchar(max)" />
+    <Property Name="img_image" Type="nvarchar(max)" />
+    <Property Name="img_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblAboutDairy">
+    <Key>
+      <PropertyRef Name="ad_id" />
+    </Key>
+    <Property Name="ad_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ad_title" Type="nvarchar" MaxLength="500" />
+    <Property Name="ad_content" Type="nvarchar" />
+  </EntityType>
+  <EntityType Name="TblAboutDirector">
+    <Key>
+      <PropertyRef Name="dir_id" />
+    </Key>
+    <Property Name="dir_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="dir_name" Type="nvarchar(max)" />
+    <Property Name="dir_content" Type="nvarchar(max)" />
+    <Property Name="dir_image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblAdmin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="admin_name" Type="nvarchar(max)" />
+    <Property Name="admin_email" Type="nvarchar(max)" />
+    <Property Name="admin_number" Type="nvarchar(max)" />
+    <Property Name="admin_username" Type="nvarchar(max)" />
+    <Property Name="admin_password" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblCareer">
+    <Key>
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Name="job_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="job_title" Type="nvarchar(max)" />
+    <Property Name="job_expereince" Type="nvarchar(max)" />
+    <Property Name="job_description" Type="nvarchar(max)" />
+    <Property Name="job_salary" Type="nvarchar(max)" />
+    <Property Name="job_date_post" Type="nvarchar(max)" />
+    <Property Name="job_last_date" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblCity">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Name="city_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="state_id" Type="int" />
+    <Property Name="city_name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblContact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fname" Type="nvarchar(max)" />
+    <Property Name="lname" Type="nvarchar(max)" />
+    <Property Name="email" Type="nvarchar(max)" />
+    <Property Name="subject" Type="nvarchar(max)" />
+    <Property Name="mobile" Type="nvarchar(max)" />
+    <Property Name="message" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblCountry">
+    <Key>
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Name="country_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="country_name" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblDealer">
+    <Key>
+      <PropertyRef Name="dealer_id" />
+    </Key>
+    <Property Name="dealer_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="dealer_name" Type="nvarchar(max)" />
+    <Property Name="dealer_number" Type="nvarchar(max)" />
+    <Property Name="dealer_email" Type="nvarchar(max)" />
+    <Property Name="dealer_address" Type="nvarchar(max)" />
+    <Property Name="dealer_pin" Type="nvarchar(max)" />
+    <Property Name="dealer_country" Type="nvarchar(max)" />
+    <Property Name="dealer_state" Type="nvarchar(max)" />
+    <Property Name="dealer_city" Type="nvarchar(max)" />
+    <Property Name="dealer_company" Type="nvarchar(max)" />
+    <Property Name="dealer_fax" Type="nvarchar(max)" />
+    <Property Name="dealer_description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblFranchise">
+    <Key>
+      <PropertyRef Name="fran_id" />
+    </Key>
+    <Property Name="fran_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="fran_name" Type="nvarchar(max)" />
+    <Property Name="fran_number" Type="nvarchar(max)" />
+    <Property Name="fran_email" Type="nvarchar(max)" />
+    <Property Name="fran_address" Type="nvarchar(max)" />
+    <Property Name="fran_pin" Type="nvarchar(max)" />
+    <Property Name="fran_country" Type="nvarchar(max)" />
+    <Property Name="fran_state" Type="nvarchar(max)" />
+    <Property Name="fran_city" Type="nvarchar(max)" />
+    <Property Name="fran_company" Type="nvarchar(max)" />
+    <Property Name="fran_fax" Type="nvarchar(max)" />
+    <Property Name="fran_description" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblInfrastructure">
+    <Key>
+      <PropertyRef Name="infra_id" />
+    </Key>
+    <Property Name="infra_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="infra_title" Type="nvarchar(max)" />
+    <Property Name="infra_content" Type="nvarchar(max)" />
+    <Property Name="infra_image" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblProduct">
+    <Key>
+      <PropertyRef Name="pro_id" />
+    </Key>
+    <Property Name="pro_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pro_name" Type="nvarchar(max)" />
+    <Property Name="pro_image" Type="nvarchar(max)" />
+    <Property Name="pro_content" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblProductPackage">
+    <Key>
+      <PropertyRef Name="propk_id" />
+    </Key>
+    <Property Name="propk_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="pro_id" Type="int" />
+    <Property Name="pack_type" Type="nvarchar(max)" />
+    <Property Name="pack_prize" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="TblState">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Name="state_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="country_id" Type="int" />
+    <Property Name="state_name" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_TblCity_TblState">
+    <End Role="TblState" Type="indrayanimilkModel.Store.TblState" Multiplicity="0..1" />
+    <End Role="TblCity" Type="indrayanimilkModel.Store.TblCity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblState">
+        <PropertyRef Name="state_id" />
+      </Principal>
+      <Dependent Role="TblCity">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblProductPackage_TblProduct">
+    <End Role="TblProduct" Type="indrayanimilkModel.Store.TblProduct" Multiplicity="0..1" />
+    <End Role="TblProductPackage" Type="indrayanimilkModel.Store.TblProductPackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblProduct">
+        <PropertyRef Name="pro_id" />
+      </Principal>
+      <Dependent Role="TblProductPackage">
+        <PropertyRef Name="pro_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TblState_TblCountry">
+    <End Role="TblCountry" Type="indrayanimilkModel.Store.TblCountry" Multiplicity="0..1" />
+    <End Role="TblState" Type="indrayanimilkModel.Store.TblState" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblCountry">
+        <PropertyRef Name="country_id" />
+      </Principal>
+      <Dependent Role="TblState">
+        <PropertyRef Name="country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,47 @@
+﻿@model talekarmilk.Models.TblProductPackage
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TblProductPackage</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.propk_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.propk_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TblProduct.pro_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TblProduct.pro_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pack_type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pack_type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pack_prize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pack_prize)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

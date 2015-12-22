@@ -1,0 +1,61 @@
+﻿@model talekarmilk.Models.TblInfrastructure
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm(Html.BeginForm(Html.BeginForm(Html.BeginForm(null, null, FormMethod.Post, new { enctype = "multipart/form-data" })))))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TblInfrastructure</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.infra_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.infra_id)
+            @Html.ValidationMessageFor(model => model.infra_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.infra_title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.infra_title)
+            @Html.ValidationMessageFor(model => model.infra_title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.infra_content)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.infra_content)
+            @Html.ValidationMessageFor(model => model.infra_content)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.infra_image)
+        </div>
+        <div class="editor-field">
+           <input type="file" name="file" id="file" />
+            @Html.ValidationMessageFor(model => model.infra_image)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

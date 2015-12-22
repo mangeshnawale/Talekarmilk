@@ -1,0 +1,99 @@
+﻿@model talekarmilk.Models.TblDealer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TblDealer</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_pin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_pin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_country)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_country)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_state)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_state)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_city)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_city)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_company)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_company)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_fax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_fax)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_description)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,36 @@
+﻿@model talekarmilk.Models.TblAboutDairy
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TblAboutDairy</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ad_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ad_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ad_title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ad_title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ad_content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ad_content)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

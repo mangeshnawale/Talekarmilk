@@ -1,0 +1,68 @@
+﻿@model talekarmilk.Models.TblCareer
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TblCareer</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_expereince)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_expereince)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_salary)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_salary)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_date_post)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_date_post)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_last_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_last_date)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

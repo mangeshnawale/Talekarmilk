@@ -1,0 +1,40 @@
+﻿@model talekarmilk.Models.TblState
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TblState</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.state_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.state_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TblCountry.country_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TblCountry.country_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.state_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.state_name)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

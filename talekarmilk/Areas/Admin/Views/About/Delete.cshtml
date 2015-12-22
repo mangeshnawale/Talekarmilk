@@ -1,0 +1,40 @@
+﻿@model talekarmilk.Models.TblAboutDairy
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TblAboutDairy</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ad_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ad_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ad_title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ad_title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.ad_content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.ad_content)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

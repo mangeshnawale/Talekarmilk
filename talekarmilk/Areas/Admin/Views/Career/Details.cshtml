@@ -1,0 +1,64 @@
+﻿@model talekarmilk.Models.TblCareer
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TblCareer</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_expereince)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_expereince)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_salary)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_salary)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_date_post)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_date_post)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.job_last_date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.job_last_date)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

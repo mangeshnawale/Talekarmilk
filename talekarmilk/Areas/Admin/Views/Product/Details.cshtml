@@ -1,0 +1,44 @@
+﻿@model talekarmilk.Models.TblProduct
+
+@{
+    ViewBag.Title = "Details";
+    
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TblProduct</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pro_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pro_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pro_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pro_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pro_image)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pro_image)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pro_content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pro_content)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.pro_id }, new { @class = "lnkEdit" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

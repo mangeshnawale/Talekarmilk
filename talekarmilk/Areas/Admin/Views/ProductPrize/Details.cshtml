@@ -1,0 +1,43 @@
+﻿@model talekarmilk.Models.TblProductPackage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TblProductPackage</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.propk_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.propk_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.TblProduct.pro_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.TblProduct.pro_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pack_type)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pack_type)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.pack_prize)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.pack_prize)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

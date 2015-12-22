@@ -1,0 +1,44 @@
+﻿@model talekarmilk.Models.TblAboutDirector
+
+@{
+    ViewBag.Title = "Details";
+    
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TblAboutDirector</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dir_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dir_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dir_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dir_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dir_content)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dir_content)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dir_image)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dir_image)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.dir_id },new { @class = "lnkEdit" }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

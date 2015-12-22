@@ -1,0 +1,231 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="indrayanimilkModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="indrayanimilkEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TablPartners" EntityType="indrayanimilkModel.TablPartner" />
+    <EntitySet Name="Tbl_Gallary" EntityType="indrayanimilkModel.Tbl_Gallary" />
+    <EntitySet Name="TblAboutDairies" EntityType="indrayanimilkModel.TblAboutDairy" />
+    <EntitySet Name="TblAboutDirectors" EntityType="indrayanimilkModel.TblAboutDirector" />
+    <EntitySet Name="TblAdmins" EntityType="indrayanimilkModel.TblAdmin" />
+    <EntitySet Name="TblContacts" EntityType="indrayanimilkModel.TblContact" />
+    <EntitySet Name="TblDealers" EntityType="indrayanimilkModel.TblDealer" />
+    <EntitySet Name="TblFranchises" EntityType="indrayanimilkModel.TblFranchise" />
+    <EntitySet Name="TblInfrastructures" EntityType="indrayanimilkModel.TblInfrastructure" />
+    <EntitySet Name="TblProducts" EntityType="indrayanimilkModel.TblProduct" />
+    <EntitySet Name="TblProductPackages" EntityType="indrayanimilkModel.TblProductPackage" />
+    <AssociationSet Name="FK_TblProductPackage_TblProduct" Association="indrayanimilkModel.FK_TblProductPackage_TblProduct">
+      <End Role="TblProduct" EntitySet="TblProducts" />
+      <End Role="TblProductPackage" EntitySet="TblProductPackages" />
+    </AssociationSet>
+    <EntitySet Name="TblCareers" EntityType="indrayanimilkModel.TblCareer" />
+    <EntitySet Name="TblCountries" EntityType="indrayanimilkModel.TblCountry" />
+    <EntitySet Name="TblStates" EntityType="indrayanimilkModel.TblState" />
+    <AssociationSet Name="FK_TblState_TblCountry" Association="indrayanimilkModel.FK_TblState_TblCountry">
+      <End Role="TblCountry" EntitySet="TblCountries" />
+      <End Role="TblState" EntitySet="TblStates" />
+    </AssociationSet>
+    <EntitySet Name="TblCities" EntityType="indrayanimilkModel.TblCity" />
+    <AssociationSet Name="FK_TblCity_TblState" Association="indrayanimilkModel.FK_TblCity_TblState">
+      <End Role="TblState" EntitySet="TblStates" />
+      <End Role="TblCity" EntitySet="TblCities" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="TablPartner">
+    <Key>
+      <PropertyRef Name="part_id" />
+    </Key>
+    <Property Name="part_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="part_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="part_number" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="part_email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="part_company" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="part_designation" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="part_message" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Tbl_Gallary">
+    <Key>
+      <PropertyRef Name="img_id" />
+    </Key>
+    <Property Name="img_id" Type="Int32" Nullable="false" />
+    <Property Name="img_title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="img_image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="img_content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblAboutDairy">
+    <Key>
+      <PropertyRef Name="ad_id" />
+    </Key>
+    <Property Name="ad_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ad_title" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+    <Property Name="ad_content" Type="String" MaxLength="4000" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblAboutDirector">
+    <Key>
+      <PropertyRef Name="dir_id" />
+    </Key>
+    <Property Name="dir_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dir_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dir_content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dir_image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblAdmin">
+    <Key>
+      <PropertyRef Name="admin_id" />
+    </Key>
+    <Property Name="admin_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="admin_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="admin_email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="admin_number" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="admin_username" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="admin_password" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblContact">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fname" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="lname" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="subject" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="mobile" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="message" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblDealer">
+    <Key>
+      <PropertyRef Name="dealer_id" />
+    </Key>
+    <Property Name="dealer_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dealer_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_number" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_pin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_country" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_state" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_city" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_company" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_fax" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="dealer_description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblFranchise">
+    <Key>
+      <PropertyRef Name="fran_id" />
+    </Key>
+    <Property Name="fran_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="fran_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_number" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_email" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_address" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_pin" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_country" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_state" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_city" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_company" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_fax" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="fran_description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblInfrastructure">
+    <Key>
+      <PropertyRef Name="infra_id" />
+    </Key>
+    <Property Name="infra_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="infra_title" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="infra_content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="infra_image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="TblProduct">
+    <Key>
+      <PropertyRef Name="pro_id" />
+    </Key>
+    <Property Name="pro_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pro_name" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="pro_image" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="pro_content" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TblProductPackages" Relationship="indrayanimilkModel.FK_TblProductPackage_TblProduct" FromRole="TblProduct" ToRole="TblProductPackage" />
+  </EntityType>
+  <EntityType Name="TblProductPackage">
+    <Key>
+      <PropertyRef Name="propk_id" />
+    </Key>
+    <Property Name="propk_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="pro_id" Type="Int32" />
+    <Property Name="pack_type" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="pack_prize" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="TblProduct" Relationship="indrayanimilkModel.FK_TblProductPackage_TblProduct" FromRole="TblProductPackage" ToRole="TblProduct" />
+  </EntityType>
+  <Association Name="FK_TblProductPackage_TblProduct">
+    <End Role="TblProduct" Type="indrayanimilkModel.TblProduct" Multiplicity="0..1" />
+    <End Role="TblProductPackage" Type="indrayanimilkModel.TblProductPackage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblProduct">
+        <PropertyRef Name="pro_id" />
+      </Principal>
+      <Dependent Role="TblProductPackage">
+        <PropertyRef Name="pro_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TblCareer">
+    <Key>
+      <PropertyRef Name="job_id" />
+    </Key>
+    <Property Type="Int32" Name="job_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="job_title" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="job_expereince" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="job_description" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="job_salary" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="job_date_post" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="job_last_date" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TblCountry">
+    <Key>
+      <PropertyRef Name="country_id" />
+    </Key>
+    <Property Type="Int32" Name="country_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="country_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TblStates" Relationship="indrayanimilkModel.FK_TblState_TblCountry" FromRole="TblCountry" ToRole="TblState" />
+  </EntityType>
+  <EntityType Name="TblState">
+    <Key>
+      <PropertyRef Name="state_id" />
+    </Key>
+    <Property Type="Int32" Name="state_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="country_id" />
+    <Property Type="String" Name="state_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TblCountry" Relationship="indrayanimilkModel.FK_TblState_TblCountry" FromRole="TblState" ToRole="TblCountry" />
+    <NavigationProperty Name="TblCities" Relationship="indrayanimilkModel.FK_TblCity_TblState" FromRole="TblState" ToRole="TblCity" />
+  </EntityType>
+  <Association Name="FK_TblState_TblCountry">
+    <End Type="indrayanimilkModel.TblCountry" Role="TblCountry" Multiplicity="0..1" />
+    <End Type="indrayanimilkModel.TblState" Role="TblState" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblCountry">
+        <PropertyRef Name="country_id" />
+      </Principal>
+      <Dependent Role="TblState">
+        <PropertyRef Name="country_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TblCity">
+    <Key>
+      <PropertyRef Name="city_id" />
+    </Key>
+    <Property Type="Int32" Name="city_id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="state_id" />
+    <Property Type="String" Name="city_name" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="TblState" Relationship="indrayanimilkModel.FK_TblCity_TblState" FromRole="TblCity" ToRole="TblState" />
+  </EntityType>
+  <Association Name="FK_TblCity_TblState">
+    <End Type="indrayanimilkModel.TblState" Role="TblState" Multiplicity="0..1" />
+    <End Type="indrayanimilkModel.TblCity" Role="TblCity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TblState">
+        <PropertyRef Name="state_id" />
+      </Principal>
+      <Dependent Role="TblCity">
+        <PropertyRef Name="state_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

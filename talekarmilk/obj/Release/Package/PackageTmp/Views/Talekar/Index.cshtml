@@ -1,0 +1,608 @@
+﻿@using talekarmilk.Models;
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home | Indrayani Milk Marketing</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/nivo-lightbox.css" rel="stylesheet" />
+    <link href="~/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/animations.css" rel="stylesheet" />
+    <link href="~/color/default.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/grid.css" rel="stylesheet" />
+    <link href="~/css/layout.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../img/favicon.png">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <section class="hero" id="intro">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-right navicon">
+                    <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 text-center inner">
+                    <div class="animatedParent">
+                        <h1 class="animated fadeInDown" style="color: #fff;"><b>WELCOME TO INDRAYANI MILK MARKETING </b>
+                            <br />
+                            <br />
+                            <a href="#about">
+                                <img src="../img/homelogo.png" /></a><br />
+                        </h1>
+                        @*<p class="animated fadeInUp">Welcome to Talekar Dairy</p>*@
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                    <a href="#about" class="learn-more-btn btn-scroll">Scroll Down</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Navigation -->
+    <div id="navigation">
+        <nav class="navbar navbar-custom" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="site-logo">
+                            <a href="@Url.Content("~/Talekar/Index")" class="brand">
+                                <img src="../img/indrayani.png" class="img-responsive" @*style="width:100px; height:100px;"*@ /></a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-10">
+
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="menu">
+                            <ul class="nav navbar-nav navbar-right nav-margin">
+                                <li class="active"><a href="#intro">Home</a></li>
+                                <li class="dropdown"><a href="#about">About Us</a>
+                                    <ul class="dropdown-menu" style="right: -40px; border-top: 3px solid #3DC9B3;">
+                                        <li><a href="#about">About US</a></li>
+                                        <li><a href="#team">About Director</a></li>
+                                        <li><a href="http://webmail.indrayanimilk.com/" target="_blank">Employee Login</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="#service">Products</a>
+                                    <ul class="dropdown-menu" style="right: -40px; border-top: 3px solid #3DC9B3;">
+                                        @foreach (TblProduct aa in ViewBag.Product)
+                                        {
+                                            <li><a href="~/Talekar/Product_View?prod_id=@aa.pro_id">@aa.pro_name</a></li>
+                                        }
+                                        </ul>
+                                </li>
+                                <li><a href="#works">Infrastructure</a></li>
+                                <li class="dropdown"><a href="#business">Business</a>
+                                    <ul class="dropdown-menu" style="right: -40px; border-top: 3px solid #3DC9B3;">
+                                        <li><a href="@Url.Content("~/Talekar/Dealer")">Be Dealer</a></li>
+                                        <li><a href="@Url.Content("~/Talekar/Franchise")">Franchise</a></li>
+                                        <li><a href="@Url.Content("~/Talekar/Partner")">Be Partner</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#gallary">Gallary</a></li>
+                                <li><a href="@Url.Content("~/Talekar/Career")">Careers</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.Navbar-collapse -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </nav>
+    </div>
+    <!-- /Navigation -->
+
+    <!-- Section: about -->
+    <section id="about" class="home-section color-dark bg-white">
+        <div class="container marginbot-50">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="animatedParent">
+                        <div class="section-heading text-center animated bounceInDown">
+                            <h2 class="h-bold">About Talekar Dairy</h2>
+                            <div class="divider-header"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+
+            <div class="row">
+
+
+                <div class="col-lg-8 col-lg-offset-2 animatedParent">
+                    <div class="text-center">
+                        @*                    @foreach(TblAbout a in ViewBag.About)
+                    {
+                   <p>@a.about_content</p>
+                    }*@
+                        @*<p>
+					Lorem ipsum dolor sit amet, vis tale malis tacimates et, graece doctus omnesque ne est, deserunt pertinacia ne nam. Pro eu simul affert referrentur, natum mutat erroribus te his
+					</p>
+					<p>
+					Ne mundi fabulas corrumpit vim, nulla vivendum conceptam eu nam. Ius ex principes complectitur, ex quo duis suscipit. Ius fastidii reprimique no. Sadipscing appellantur pri ad. Oratio moderatius definitiones cum ex, mea ne brute vivendum percipitur. 
+					</p>*@
+                        @foreach (TblAboutDairy a in ViewBag.About)
+                        {
+                            <p style="text-align:justify;">@a.ad_content</p>
+                        }
+                        <a href="#team" class="btn btn-skin btn-scroll">Director</a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        <br />
+        <br />
+        <div id="team" class="container marginbot-50">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="animatedParent">
+                        <div class="section-heading text-center animated bounceInDown">
+                            <h2 class="h-bold">About Director</h2>
+                            <div class="divider-header"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+
+            <div class="row">
+
+                @foreach (TblAboutDirector dr in ViewBag.Director)
+                {
+                    
+                    <div class="col-lg-8 col-lg-offset-2 animatedParent">
+
+                        @*<div class="owner">*@
+                        <img src="~/saveimages/@dr.dir_image" class="img-responsive" style="float:left; width:150px; height:150px; " alt="owner">
+                        @*</div>*@
+
+                        <div class="text-center">
+
+                            <p style="text-align:justify;"><b>@dr.dir_name </b> @dr.dir_content</p>
+
+
+
+
+                        </div>
+                        <br />
+                        <br />
+                        <div style="text-align: center;">
+                            <a href="#service" class="btn btn-skin btn-scroll">Scroll Down</a>
+
+                        </div>
+
+                    </div>
+      
+                }
+
+
+            </div>
+        </div>
+
+    </section>
+    <!-- /Section: about -->
+
+
+    <!-- Section: services -->
+    <section id="service" class="home-section color-dark bg-gray">
+        <div class="container marginbot-50">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div>
+                        <div class="section-heading text-center">
+                            <h2 class="h-bold">Our Products</h2>
+                            <div class="divider-header"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="text-center">
+            <div class="container">
+
+                <div class="row animatedParent">
+                    @{
+                        int counter = 0;
+                    }
+
+                    @foreach (TblProduct a in ViewBag.Product)
+                    {
+                        <div class="col-xs-6 col-sm-4 col-md-4">
+                            <div class="animated rotateInDownLeft">
+                                <div class="service-box">
+                                    @*<div class="service-icon">
+						<span class="fa fa-laptop fa-2x"></span> 
+					</div>*@
+                                    <div class="service-desc">
+                                        <h5>@a.pro_name</h5>
+                                        <img src="~/saveimages/@a.pro_image" class="img-responsive" alt="img" style="width:300px; height:250px;">
+                                        @*<div class="divider-header"></div>
+					
+                        
+						*@
+                                        <br />
+                                        <a href="~/Talekar/Product_View?prod_id=@a.pro_id" class="btn btn-skin">Learn more</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        counter++;
+                        if (counter == 3)
+                        {
+                            break;
+                        }
+
+                    }
+                </div>
+
+                <br />
+                <br />
+                <a href="@Url.Content("~/Talekar/Product")" class="btn btn-skin">Load more Products</a>
+                <br />
+                <br />
+                <a href="#business" class="btn btn-skin btn-scroll">Scroll Down</a>
+            </div>
+        </div>
+
+    </section>
+    <!-- /Section: services -->
+    <section id="business" class="home-section color-dark bg-white">
+        <div class="container marginbot-50">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="animatedParent">
+                        <div class="section-heading text-center animated bounceInDown">
+                            <h2 class="h-bold">Business with US</h2>
+                            <div class="divider-header"></div>
+                            <p>
+                                want to do business?  Join US
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+
+            <div class="row">
+
+
+                <div class="col-lg-8 col-lg-offset-2 animatedParent">
+                    <div class="text-center">
+
+                        <p style="text-align:justify;">
+                            All in all, we at Indrayni Milk Marketing believe in actions. We let our work do the talking. An ideal balance between work and play, we are an organization that places its employee's requirements upfront and utilizes their talent to the best of their capability. Growth and opportunities are never ending stories at Indrayani.</p>
+
+                        <a href="@Url.Content("~/Talekar/Product")" style="margin-left:10px;" class="btn btn-skin">Be a Partner</a>
+                        <a href="@Url.Content("~/Talekar/Franchise")" style="margin-left:10px;" class="btn btn-skin">Franchise</a>
+                        <a href="@Url.Content("~/Talekar/Partner")" style="margin-left:10px;" class="btn btn-skin">Be a Dealer</a>
+                        <br />
+                        <br />
+                        <a href="#works" class="btn btn-skin btn-scroll" style="margin-left: 10px;">Scroll Down</a>
+                    </div>
+                    <br />
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!-- /Section: about -->
+
+
+    <!-- Section: works -->
+    <section id="works" class="home-section color-dark text-center bg-white">
+        <div class="container marginbot-50">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div>
+                        <div class="animatedParent">
+                            <div class="section-heading text-center">
+                                <h2 class="h-bold animated bounceInDown">Infrastructure</h2>
+                                <div class="divider-header"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        @foreach (TblInfrastructure ii in ViewBag.Infrastructure)
+        {
+            <div>
+                <div class="container marginbot-50">
+                    <div class="row">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <div class="animatedParent">
+                                <div class="section-heading text-center">
+                                    <h2 class="h-bold">@ii.infra_title</h2>
+                                    <div class="divider-header"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="container">
+
+                    <div class="row">
+
+
+                        <div class="col-lg-8 col-lg-offset-2 animatedParent">
+                            <div class="text-center">
+                                <div class="imgmilk"><img src="~/saveimages/@ii.infra_image" class="imgrep"/></div>
+                               <div class="pmilk"><p style="text-align:justify"> 
+                                    @ii.infra_content
+                                </p>
+                            </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+                    <br />
+
+                </div>
+            </div>
+        }
+        <a href="#gallary" class="btn btn-skin btn-scroll" style="margin-left: 10px; text-align: center;">Scroll Down</a>
+    </section>
+
+    <!-- /Section: gallary -->
+    <section id="gallary" class="home-section color-dark text-center bg-white">
+        <div class="container marginbot-50">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div>
+                        <div class="animatedParent">
+                            <div class="section-heading text-center">
+                                <h2 class="h-bold animated bounceInDown">Gallary</h2>
+                                <div class="divider-header"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="row animatedParent">
+                <div class="col-sm-12 col-md-12 col-lg-12">
+
+                    <div class="row gallery-item">
+                        @{
+                            int count = 0;
+                        }
+                        @foreach (Tbl_Gallary gg in ViewBag.Gallary)
+                        {
+                            <div class="col-md-3 animated fadeInUp">
+                                <a href="~/saveimages/@gg.img_image" title="@gg.img_title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+
+                                    <img src="~/saveimages/@gg.img_image" class="img-responsive img-thumbnail" style="width:300px; height:300px;" alt="@gg.img_content">
+                                </a>
+                            </div>
+                            count++;
+                            if (count == 4)
+                            {
+                                break;
+                            }
+                        }
+                    </div>
+                    <br />
+                    <br />
+                    <a href="@Url.Content("~/Talekar/Gallary")" class="btn btn-skin">Load more Images</a>
+                    <br />
+                    <br />
+                    <a href="#contact" class="btn btn-skin btn-scroll" style="margin-left: 10px;">Scroll Down</a>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- /Section: Gallary -->
+
+    <!-- Section: contact -->
+    <section id="contact" class="home-section nopadd-bot color-dark bg-gray text-center">
+        <div class="container marginbot-50">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2">
+                    <div class="animatedParent">
+                        <div class="section-heading text-center">
+                            <h2 class="h-bold animated bounceInDown">Get in touch with us</h2>
+                            <div class="divider-header"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="row marginbot-80">
+                <div class="col-md-4 col-md-offset-1">
+                    <form id="contact-form" method="post" action="@Url.Action("Contact", "Talekar")">
+                        <div class="row marginbot-20">
+                            <div class="col-md-6 xs-marginbot-20">
+                                <input type="text" class="form-control input-lg" id="fname" name="fname" placeholder="Enter first name" required="required" pattern="^[A-Za-z ]+$" title="Please enter character only"/>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control input-lg" id="lname" name="lname" placeholder="Enter last name" required="required" pattern="^[A-Za-z ]+$" title="Please enter character only"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+
+                                <div class="form-group">
+                                    <input type="email" class="form-control input-lg" name="email"  id="email" placeholder="Email ID" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control input-lg" name="subject" id="subject" placeholder="Subject" required="required" pattern="^[A-Za-z ]+$" title="Please enter character only"/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control input-lg" name="mobile" id="mobile" placeholder="Mobile number" required="required" pattern="^[0-9]+$" title="Please enter 10 digit number only"/>
+                                </div>
+
+                                <div class="form-group">
+                                    <textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
+                                        placeholder="Message"></textarea>
+                                </div>
+                                <input type="submit" class="btn btn-skin btn-lg btn-block" id="btnContactUs" value="Send" />
+
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-4 col-md-offset-1" id="map">
+                    <script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+                    <div class="map" style='overflow: hidden; border: 1px solid #3DC9B3'>
+                        <div id='gmap_canvas' style='height: 429px; width: 575px;'></div>
+                        <style>
+                            #gmap_canvas img
+                            {
+                                max-width: none!important;
+                                background: none!important;
+                            }
+                        </style>
+                    </div>
+                    <a href='https://www.add-map.net/'>embedding google maps into website</a>
+                    <script type='text/javascript' src='https://embedmaps.com/google-maps-authorization/script.js?id=bef317ce60a701a2f724fd5245cb65af8a3091c8'></script>
+                    <script type='text/javascript'>function init_map() { var myOptions = { zoom: 15, center: new google.maps.LatLng(18.7826399, 74.29568749999999), mapTypeId: google.maps.MapTypeId.ROADMAP }; map = new google.maps.Map(document.getElementById('gmap_canvas'), myOptions); marker = new google.maps.Marker({ map: map, position: new google.maps.LatLng(18.7826399, 74.29568749999999) }); infowindow = new google.maps.InfoWindow({ content: '<strong>Indrayani Milk Marketing</strong><br>Near Dutta Mandir, Karegaon, Maharashtra<br>412220 Pune<br>' }); google.maps.event.addListener(marker, 'click', function () { infowindow.open(map, marker); }); infowindow.open(map, marker); } google.maps.event.addDomListener(window, 'load', init_map);</script>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+    <!-- /Section: contact -->
+
+
+    <footer>
+        <div class="container">
+            <div style="color: #fff">
+                <img class="footer-logo" src="../img/indrayani.png" width="100" alt="">
+                <div class="address">
+                    <div class="one-half"">
+                        <b  style="color:#3DC9B3;">Sales Office</b><br />
+                        Indrayani Milk Marketing<br /> Near Dutta Mandir, Karegaon
+			<br>
+                        PO BOX 412220, Shirur, Pune, Maharashtra, India
+            <br />
+                        <b>Visit Us: </b><a href="http:\\www.indraynimilk.com"><span style="color: #fff">www.indrayanimilk.com</span></a> OR <b>Mail Us: </b><span>info@indrayanimilk.com</span>
+                        <br />
+                        <b>Call Us: </b>+91-8805245428
+                    </div>
+                    <div class="one-half last">
+                        <b  style="color:#3DC9B3;">Production Office</b><br />
+                        Krishn Kanhiyya Milk Processing <br /> Dhavalgaon
+			
+                        PO BOX 413701, Shrigonda<br /> AhmedNagar, Maharashtra, India
+            <br />
+                        <b>Visit Us: </b><a href="http:\\www.indraynimilk.com"><span style="color: #fff">www.indrayanimilk.com</span></a> OR <b>Mail Us: </b><span>info@indrayanimilk.com</span>
+                        <br />
+                        <b>Call Us: </b>02487-258033/+91-9823414555
+                    </div>
+                </div>
+
+                <!-- End .address -->
+                <a href="#"><i class="fa fa-dribbble fa-2x"  style="color:#3DC9B3;"></i></a>&nbsp;&nbsp;&nbsp; 
+            <a href="#"><i class="fa fa-facebook fa-2x"  style="color:#3DC9B3;"></i></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><i class="fa fa-linkedin fa-2x"  style="color:#3DC9B3;"></i></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><i class="fa fa-twitter fa-2x"  style="color:#3DC9B3;"></i></a>
+            </div>
+            @*<ul class="social-icons">
+            <li><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        </ul>*@
+
+
+            <div class="row">
+                <br />
+                <br />
+                <div class="col-md-6">
+                    <ul class="footer-menu">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Press release</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>&copy;Copyright 2015 - Indrayani Milk Marketing. Designed & Developed by <a href="#">Mangesh Nawale</a></p>
+                    <!-- 
+                        All links in the footer should remain intact. 
+                        Licenseing information is available at: http://bootstraptaste.com/license/
+                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Bocor
+                    -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Core JavaScript Files -->
+    <script src="../js/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/jquery.easing.min.js"></script>
+    <script src="~/js/jquery.scrollTo.js"></script>
+    <script src="~/js/jquery.appear.js"></script>
+    <script src="~/js/stellar.js"></script>
+    <script src="~/js/nivo-lightbox.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/css3-animate-it.js"></script>
+    <script src="~/js/scripts.js"></script>
+    <script src="~/js/plugins.js"></script>
+</body>
+</html>

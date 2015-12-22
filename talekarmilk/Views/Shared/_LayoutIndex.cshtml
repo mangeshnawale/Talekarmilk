@@ -1,0 +1,172 @@
+﻿@using talekarmilk.Models;
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>@ViewBag.Title</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link href="~/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/nivo-lightbox.css" rel="stylesheet" />
+    <link href="~/css/nivo-lightbox-theme/default/default.css" rel="stylesheet" type="text/css" />
+    <link href="~/css/animations.css" rel="stylesheet" />
+    <link href="~/color/default.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/grid.css" rel="stylesheet" />
+    <link href="~/css/layout.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="../img/favicon.png">
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+    <div id="navigation">
+        <nav class="navbar navbar-custom" role="navigation">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="site-logo">
+                            <a href="@Url.Content("~/Talekar/Index")" class="brand">
+                                <img src="../img/indrayani.png" class="img-responsive" @*style="width:100px; height:100px;"*@ /></a>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-10">
+
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+                                <i class="fa fa-bars"></i>
+                            </button>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="menu">
+                            <ul class="nav navbar-nav navbar-right nav-margin">
+                                <li class="active"><a href="@Url.Content("~/Talekar/Index#intro")">Home</a></li>
+                                <li class="dropdown"><a href="@Url.Content("~/Talekar/Index#about")">About Us</a>
+                                    <ul class="dropdown-menu" style="right: -40px; border-top: 3px solid #3DC9B3;">
+                                        <li><a href="@Url.Content("~/Talekar/Index#about")">About US</a></li>
+                                        <li><a href="@Url.Content("~/Talekar/Index#team")">About Director</a></li>
+                                        <li><a href="http://webmail.indrayanimilk.com/" target="_blank">Employee Login</a></li>
+
+                                    </ul>
+                                </li>
+                                <li class="dropdown"><a href="@Url.Content("~/Talekar/Index#service")">Products</a>
+                                    <ul class="dropdown-menu" style="right: -40px; border-top: 3px solid #3DC9B3;">
+                                        @foreach (TblProduct aa in ViewBag.Product)
+                                        {
+                                            <li><a href="~/Talekar/Product_View?prod_id=@aa.pro_id">@aa.pro_name</a></li>
+                                        }
+
+                                    </ul>
+                                </li>
+                                <li><a href="@Url.Content("~/Talekar/Index#works")">Infrastructure</a></li>
+                                <li class="dropdown"><a href="@Url.Content("~/Talekar/Index#business")">Business</a>
+                                    <ul class="dropdown-menu" style="right: -40px; border-top: 3px solid #3DC9B3;">
+                                        <li><a href="@Url.Content("~/Talekar/Dealer")">Be Dealer</a></li>
+                                        <li><a href="@Url.Content("~/Talekar/Franchise")">Franchise</a></li>
+                                        <li><a href="@Url.Content("~/Talekar/Partner")">Be Partner</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="@Url.Content("~/Talekar/Index#gallary")">Gallary</a></li>
+                                <li><a href="@Url.Content("~/Talekar/Career")">Career</a></li>
+                                <li><a href="@Url.Content("~/Talekar/Index#contact")">Contact</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.Navbar-collapse -->
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </nav>
+    </div>
+    <!-- /Navigation -->
+
+    <div>
+        @RenderBody()
+    </div>
+    <footer>
+        <div class="container">
+            <div style="color: #fff">
+                <img class="footer-logo" src="../img/indrayani.png" width="100" alt="">
+                <div class="address">
+                   <div class="one-half"">
+                        <b  style="color:#3DC9B3;">Sales Office</b><br />
+                        Indrayani Milk Marketing<br /> Near Dutta Mandir, Karegaon
+			<br>
+                        PO BOX 412220, Shirur, Pune, Maharashtra, India
+            <br />
+                        <b>Visit Us: </b><a href="http:\\www.indraynimilk.com"><span style="color: #fff">www.indrayanimilk.com</span></a> OR <b>Mail Us: </b><span>info@indrayanimilk.com</span>
+                        <br />
+                        <b>Call Us: </b>+91-8805245428
+                    </div>
+                    <div class="one-half last">
+                        <b  style="color:#3DC9B3;">Production Office</b><br />
+                        Krishn Kanhiyya Milk Processing <br /> Dhavalgaon
+			
+                        PO BOX 413701, Shrigonda<br /> AhmedNagar, Maharashtra, India
+            <br />
+                        <b>Visit Us: </b><a href="http:\\www.indraynimilk.com"><span style="color: #fff">www.indrayanimilk.com</span></a> OR <b>Mail Us: </b><span>info@indrayanimilk.com</span>
+                        <br />
+                        <b>Call Us: </b>02487-258033/+91-9823414555
+                    </div>
+              </div>
+
+                <!-- End .address -->
+                <a href="#"><i class="fa fa-dribbble fa-2x" style="color: #fff;"></i></a>&nbsp;&nbsp;&nbsp; 
+            <a href="#"><i class="fa fa-facebook fa-2x" style="color: #fff;"></i></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><i class="fa fa-linkedin fa-2x" style="color: #fff;"></i></a>&nbsp;&nbsp;&nbsp;
+            <a href="#"><i class="fa fa-twitter fa-2x" style="color: #fff;"></i></a>
+            </div>
+            @*<ul class="social-icons">
+            <li><a href="#"><i class="fa fa-dribbble fa-2x"></i></a></li>
+            <li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook"></i></a></li>
+        </ul>*@
+
+
+            <div class="row">
+                <br />
+                <br />
+                <div class="col-md-6">
+                    <ul class="footer-menu">
+                        <li><a href="~/Talekar/Index">Home</a></li>
+                        <li><a href="#">Press release</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6 text-right">
+                    <p>&copy;Copyright 2015 - Indrayani Milk Marketing. Designed & Developed by <a href="#">Mangesh Nawale</a></p>
+                    <!-- 
+                        All links in the footer should remain intact. 
+                        Licenseing information is available at: http://bootstraptaste.com/license/
+                        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Bocor
+                    -->
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Core JavaScript Files -->
+    <script src="~/js/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="~/js/jquery.sticky.js"></script>
+    <script src="~/js/jquery.easing.min.js"></script>
+    <script src="~/js/jquery.scrollTo.js"></script>
+    <script src="~/js/jquery.appear.js"></script>
+    <script src="~/js/stellar.js"></script>
+    <script src="~/js/nivo-lightbox.min.js"></script>
+    <script src="~/js/main.js"></script>
+    <script src="~/js/custom.js"></script>
+    <script src="~/js/css3-animate-it.js"></script>
+    <script src="~/js/scripts.js"></script>
+    <script src="~/js/plugins.js"></script>
+</body>
+</html>

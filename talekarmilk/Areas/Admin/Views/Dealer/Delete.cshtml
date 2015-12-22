@@ -1,0 +1,103 @@
+﻿@model talekarmilk.Models.TblDealer
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TblDealer</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_address)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_address)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_pin)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_pin)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_country)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_country)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_state)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_state)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_city)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_city)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_company)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_company)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_fax)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_fax)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dealer_description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dealer_description)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

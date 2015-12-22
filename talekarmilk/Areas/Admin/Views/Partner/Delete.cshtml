@@ -1,0 +1,68 @@
+﻿@model talekarmilk.Models.TablPartner
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>TablPartner</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.part_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.part_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.part_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.part_name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.part_number)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.part_number)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.part_email)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.part_email)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.part_company)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.part_company)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.part_designation)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.part_designation)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.part_message)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.part_message)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

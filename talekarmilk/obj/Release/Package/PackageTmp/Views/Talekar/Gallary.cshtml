@@ -1,0 +1,48 @@
+﻿@using talekarmilk.Models;
+@{
+    ViewBag.Title = "Gallary | Indrayani Milk Marketing";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+
+<section id="gallary" class="home-section color-dark text-center bg-white">
+		<div class="container marginbot-50">
+			<div class="row">
+				<div class="col-lg-8 col-lg-offset-2">
+					<div>
+					<div class="animatedParent">
+					<div class="section-heading text-center">
+					<h2 class="h-bold animated bounceInDown">Gallary</h2>
+					<div class="divider-header"></div>
+					</div>
+					</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+		<div class="container">
+
+            <div class="row animatedParent">
+                <div class="col-sm-12 col-md-12 col-lg-12" >
+
+                    <div class="row gallery-item">
+                        @foreach(Tbl_Gallary gg in ViewBag.Gallary)
+                        {
+                        <div class="col-md-3 animated fadeInUp">
+							<a href="~/saveimages/@gg.img_image" title="@gg.img_title" data-lightbox-gallery="gallery1" data-lightbox-hidpi="img/works/1@2x.jpg">
+								
+                                <img src="~/saveimages/@gg.img_image" class="img-responsive img-thumbnail" style="width:300px; height:300px;" alt="@gg.img_content">
+							
+                                    </a>
+						</div>
+						}
+                            </div>
+                    
+                </div>
+            </div>	
+		</div>
+
+	</section>
+	<!-- /Section: Gallary -->
+

@@ -1,0 +1,29 @@
+﻿@model talekarmilk.Models.TblCountry
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>TblCountry</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.country_id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.country_id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.country_name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.country_name)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

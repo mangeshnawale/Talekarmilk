@@ -1,0 +1,57 @@
+﻿
+@model talekarmilk.Models.TblAdmin
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+
+    <title>Login</title>
+    <link href="~/Areas/Admin/logincss/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div class="wrapper">
+	<div class="container">
+		<h1>Welcome</h1>
+
+@using (Html.BeginForm("login", null, FormMethod.Post))
+   {
+        
+         
+                      <input type="text" placeholder="Username"  name="username">
+
+                 
+                      <input type="password" placeholder="Password" name="password">
+	
+                      	       
+                      <button type="submit" id="login-button">Login</button>                	
+		
+      }  
+   
+	</div>
+	
+	<ul class="bg-bubbles">
+	
+	<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	
+	<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		
+<li></li>
+	</ul>
+</div>
+ 
+    <script src="~/Areas/Admin/css/index.js"></script>
+
+</body>
+</html>

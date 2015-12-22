@@ -1,0 +1,177 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="indrayanimilkModelStoreContainer" CdmEntityContainer="indrayanimilkEntities">
+    <EntitySetMapping Name="TablPartners">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TablPartner">
+        <MappingFragment StoreEntitySet="TablPartner">
+          <ScalarProperty Name="part_id" ColumnName="part_id" />
+          <ScalarProperty Name="part_name" ColumnName="part_name" />
+          <ScalarProperty Name="part_number" ColumnName="part_number" />
+          <ScalarProperty Name="part_email" ColumnName="part_email" />
+          <ScalarProperty Name="part_company" ColumnName="part_company" />
+          <ScalarProperty Name="part_designation" ColumnName="part_designation" />
+          <ScalarProperty Name="part_message" ColumnName="part_message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tbl_Gallary">
+      <EntityTypeMapping TypeName="indrayanimilkModel.Tbl_Gallary">
+        <MappingFragment StoreEntitySet="Tbl_Gallary">
+          <ScalarProperty Name="img_id" ColumnName="img_id" />
+          <ScalarProperty Name="img_title" ColumnName="img_title" />
+          <ScalarProperty Name="img_image" ColumnName="img_image" />
+          <ScalarProperty Name="img_content" ColumnName="img_content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblAboutDairies">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblAboutDairy">
+        <MappingFragment StoreEntitySet="TblAboutDairy">
+          <ScalarProperty Name="ad_id" ColumnName="ad_id" />
+          <ScalarProperty Name="ad_title" ColumnName="ad_title" />
+          <ScalarProperty Name="ad_content" ColumnName="ad_content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblAboutDirectors">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblAboutDirector">
+        <MappingFragment StoreEntitySet="TblAboutDirector">
+          <ScalarProperty Name="dir_id" ColumnName="dir_id" />
+          <ScalarProperty Name="dir_name" ColumnName="dir_name" />
+          <ScalarProperty Name="dir_content" ColumnName="dir_content" />
+          <ScalarProperty Name="dir_image" ColumnName="dir_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblAdmins">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblAdmin">
+        <MappingFragment StoreEntitySet="TblAdmin">
+          <ScalarProperty Name="admin_id" ColumnName="admin_id" />
+          <ScalarProperty Name="admin_name" ColumnName="admin_name" />
+          <ScalarProperty Name="admin_email" ColumnName="admin_email" />
+          <ScalarProperty Name="admin_number" ColumnName="admin_number" />
+          <ScalarProperty Name="admin_username" ColumnName="admin_username" />
+          <ScalarProperty Name="admin_password" ColumnName="admin_password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblContacts">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblContact">
+        <MappingFragment StoreEntitySet="TblContact">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="fname" ColumnName="fname" />
+          <ScalarProperty Name="lname" ColumnName="lname" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="subject" ColumnName="subject" />
+          <ScalarProperty Name="mobile" ColumnName="mobile" />
+          <ScalarProperty Name="message" ColumnName="message" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblDealers">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblDealer">
+        <MappingFragment StoreEntitySet="TblDealer">
+          <ScalarProperty Name="dealer_id" ColumnName="dealer_id" />
+          <ScalarProperty Name="dealer_name" ColumnName="dealer_name" />
+          <ScalarProperty Name="dealer_number" ColumnName="dealer_number" />
+          <ScalarProperty Name="dealer_email" ColumnName="dealer_email" />
+          <ScalarProperty Name="dealer_address" ColumnName="dealer_address" />
+          <ScalarProperty Name="dealer_pin" ColumnName="dealer_pin" />
+          <ScalarProperty Name="dealer_country" ColumnName="dealer_country" />
+          <ScalarProperty Name="dealer_state" ColumnName="dealer_state" />
+          <ScalarProperty Name="dealer_city" ColumnName="dealer_city" />
+          <ScalarProperty Name="dealer_company" ColumnName="dealer_company" />
+          <ScalarProperty Name="dealer_fax" ColumnName="dealer_fax" />
+          <ScalarProperty Name="dealer_description" ColumnName="dealer_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblFranchises">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblFranchise">
+        <MappingFragment StoreEntitySet="TblFranchise">
+          <ScalarProperty Name="fran_id" ColumnName="fran_id" />
+          <ScalarProperty Name="fran_name" ColumnName="fran_name" />
+          <ScalarProperty Name="fran_number" ColumnName="fran_number" />
+          <ScalarProperty Name="fran_email" ColumnName="fran_email" />
+          <ScalarProperty Name="fran_address" ColumnName="fran_address" />
+          <ScalarProperty Name="fran_pin" ColumnName="fran_pin" />
+          <ScalarProperty Name="fran_country" ColumnName="fran_country" />
+          <ScalarProperty Name="fran_state" ColumnName="fran_state" />
+          <ScalarProperty Name="fran_city" ColumnName="fran_city" />
+          <ScalarProperty Name="fran_company" ColumnName="fran_company" />
+          <ScalarProperty Name="fran_fax" ColumnName="fran_fax" />
+          <ScalarProperty Name="fran_description" ColumnName="fran_description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblInfrastructures">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblInfrastructure">
+        <MappingFragment StoreEntitySet="TblInfrastructure">
+          <ScalarProperty Name="infra_id" ColumnName="infra_id" />
+          <ScalarProperty Name="infra_title" ColumnName="infra_title" />
+          <ScalarProperty Name="infra_content" ColumnName="infra_content" />
+          <ScalarProperty Name="infra_image" ColumnName="infra_image" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProducts">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblProduct">
+        <MappingFragment StoreEntitySet="TblProduct">
+          <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+          <ScalarProperty Name="pro_name" ColumnName="pro_name" />
+          <ScalarProperty Name="pro_image" ColumnName="pro_image" />
+          <ScalarProperty Name="pro_content" ColumnName="pro_content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblProductPackages">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblProductPackage">
+        <MappingFragment StoreEntitySet="TblProductPackage">
+          <ScalarProperty Name="propk_id" ColumnName="propk_id" />
+          <ScalarProperty Name="pro_id" ColumnName="pro_id" />
+          <ScalarProperty Name="pack_type" ColumnName="pack_type" />
+          <ScalarProperty Name="pack_prize" ColumnName="pack_prize" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblCareers">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblCareer">
+        <MappingFragment StoreEntitySet="TblCareer">
+          <ScalarProperty Name="job_last_date" ColumnName="job_last_date" />
+          <ScalarProperty Name="job_date_post" ColumnName="job_date_post" />
+          <ScalarProperty Name="job_salary" ColumnName="job_salary" />
+          <ScalarProperty Name="job_description" ColumnName="job_description" />
+          <ScalarProperty Name="job_expereince" ColumnName="job_expereince" />
+          <ScalarProperty Name="job_title" ColumnName="job_title" />
+          <ScalarProperty Name="job_id" ColumnName="job_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblCountries">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblCountry">
+        <MappingFragment StoreEntitySet="TblCountry">
+          <ScalarProperty Name="country_name" ColumnName="country_name" />
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblStates">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblState">
+        <MappingFragment StoreEntitySet="TblState">
+          <ScalarProperty Name="state_name" ColumnName="state_name" />
+          <ScalarProperty Name="country_id" ColumnName="country_id" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TblCities">
+      <EntityTypeMapping TypeName="indrayanimilkModel.TblCity">
+        <MappingFragment StoreEntitySet="TblCity">
+          <ScalarProperty Name="city_name" ColumnName="city_name" />
+          <ScalarProperty Name="state_id" ColumnName="state_id" />
+          <ScalarProperty Name="city_id" ColumnName="city_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,105 @@
+﻿@using talekarmilk.Models;
+@{
+    ViewBag.Title = "Partner | Indrayani Milk Marketing";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<section class="home-section color-dark bg-white">
+    <div class="container marginbot-50" style="background-color: rgba(230, 230, 230, 0.62)">
+        <br />
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="animatedParent">
+                    <div class="section-heading text-center animated bounceInDown">
+                        <h2 class="h-bold">Be a Part of Our Organization</h2>
+                        <p>(Partnership form. Please fill all details.)</p>
+                        <div class="divider-header"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container" style="background-color: rgba(230, 230, 230, 0.62)">
+        <br />
+
+        <form id="contact-form" method="post" action="@Url.Action("Partner", "Talekar")">
+            <div class="row marginbot-20">
+                <div class="col-md-2">
+                    <label>Enter Full Name *:</label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="text" class="form-control input-lg" id="name" name="name" placeholder="Enter Full Name" required="required" pattern="^[A-Za-z ]+$" title="Please enter character only"/>
+                </div>
+                <div class="col-md-2">
+                    <label>Enter Mobile Numer *:</label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="text" class="form-control input-lg" id="mobile" name="mobile" placeholder="Enter Mobile Number" required="required" pattern="^[0-9 ]+$" title="Please enter 10 digit number only"/>
+                </div>
+
+
+            </div>
+            <div class="row marginbot-20">
+                <div class="col-md-2">
+                    <label>Enter Email ID *:</label>
+                </div>
+
+                <div class="col-md-4">
+                    <input type="email" class="form-control input-lg" id="email" name="email" placeholder="Enter Email Id" required="required" />
+                </div>
+
+
+            </div>
+            <div class="row marginbot-20">
+                <div class="col-md-2">
+                    <label>Enter Comapny *:</label>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" placeholder="Enter Company Name" name="company" id="company" required="required" />
+
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <label>Enter Designation *:</label>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <input type="text" class="form-control input-lg" placeholder="Enter Your Designation" name="designation" id="designation" required="required" />
+
+                    </div>
+                </div>
+
+            </div>
+    
+
+    
+            <div class="row marginbot-20">
+                <div class="col-md-2">
+                    <label>Enter Your Message *:</label>
+                </div>
+
+                <div class="col-md-10">
+                    <div class="form-group">
+                        <textarea name="message" id="message" class="form-control" rows="4" cols="25" required="required"
+                            placeholder="Enter Your Message"></textarea>
+                    </div>
+                </div>
+            </div>
+    <div class="row">
+        <div class="col-md-12">
+
+
+
+            <input type="submit" class="btn btn-skin btn-lg btn-block" id="btnContactUs" value="Send" />
+
+        </div>
+    </div>
+    </form>
+        <br />
+    </div>
+</section>

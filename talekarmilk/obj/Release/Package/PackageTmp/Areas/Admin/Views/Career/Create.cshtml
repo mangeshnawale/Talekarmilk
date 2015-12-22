@@ -1,0 +1,84 @@
+﻿@model talekarmilk.Models.TblCareer
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TblCareer</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.job_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.job_id)
+            @Html.ValidationMessageFor(model => model.job_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.job_title)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.job_title)
+            @Html.ValidationMessageFor(model => model.job_title)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.job_expereince)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.job_expereince)
+            @Html.ValidationMessageFor(model => model.job_expereince)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.job_description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.job_description)
+            @Html.ValidationMessageFor(model => model.job_description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.job_salary)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.job_salary)
+            @Html.ValidationMessageFor(model => model.job_salary)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.job_date_post)
+        </div>
+        <div class="editor-field">
+            <input type="date" name="postdate" id="postdate" required="required" />
+            @Html.ValidationMessageFor(model => model.job_date_post)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.job_last_date)
+        </div>
+        <div class="editor-field">
+            <input type="date" name="lastdate" id="lastdate" required="required" />
+            @Html.ValidationMessageFor(model => model.job_last_date)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

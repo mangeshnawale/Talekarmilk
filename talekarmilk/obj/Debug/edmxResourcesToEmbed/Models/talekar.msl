@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="talekarModelStoreContainer" CdmEntityContainer="talekarEntities1">
+    <EntitySetMapping Name="TblAbouts">
+      <EntityTypeMapping TypeName="talekarModel.TblAbout">
+        <MappingFragment StoreEntitySet="TblAbout">
+          <ScalarProperty Name="about_id" ColumnName="about_id" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="about_content" ColumnName="about_content" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

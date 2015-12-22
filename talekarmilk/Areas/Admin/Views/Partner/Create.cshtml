@@ -1,0 +1,84 @@
+﻿@model talekarmilk.Models.TablPartner
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TablPartner</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.part_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.part_id)
+            @Html.ValidationMessageFor(model => model.part_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.part_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.part_name)
+            @Html.ValidationMessageFor(model => model.part_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.part_number)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.part_number)
+            @Html.ValidationMessageFor(model => model.part_number)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.part_email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.part_email)
+            @Html.ValidationMessageFor(model => model.part_email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.part_company)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.part_company)
+            @Html.ValidationMessageFor(model => model.part_company)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.part_designation)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.part_designation)
+            @Html.ValidationMessageFor(model => model.part_designation)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.part_message)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.part_message)
+            @Html.ValidationMessageFor(model => model.part_message)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

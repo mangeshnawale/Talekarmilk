@@ -1,0 +1,124 @@
+﻿@model talekarmilk.Models.TblDealer
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>TblDealer</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_id)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_id)
+            @Html.ValidationMessageFor(model => model.dealer_id)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_name)
+            @Html.ValidationMessageFor(model => model.dealer_name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_number)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_number)
+            @Html.ValidationMessageFor(model => model.dealer_number)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_email)
+            @Html.ValidationMessageFor(model => model.dealer_email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_address)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_address)
+            @Html.ValidationMessageFor(model => model.dealer_address)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_pin)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_pin)
+            @Html.ValidationMessageFor(model => model.dealer_pin)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_country)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_country)
+            @Html.ValidationMessageFor(model => model.dealer_country)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_state)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_state)
+            @Html.ValidationMessageFor(model => model.dealer_state)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_city)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_city)
+            @Html.ValidationMessageFor(model => model.dealer_city)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_company)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_company)
+            @Html.ValidationMessageFor(model => model.dealer_company)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_fax)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_fax)
+            @Html.ValidationMessageFor(model => model.dealer_fax)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dealer_description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dealer_description)
+            @Html.ValidationMessageFor(model => model.dealer_description)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

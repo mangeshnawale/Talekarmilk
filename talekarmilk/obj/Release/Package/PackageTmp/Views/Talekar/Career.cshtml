@@ -1,0 +1,71 @@
+﻿@using talekarmilk.Models;
+@{
+    ViewBag.Title = "Career | Indrayani Milk Marketing";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style type="text/css">
+    b
+    {
+        color:#000;
+    }
+</style>
+<section class="home-section color-dark bg-white">
+    <div class="container marginbot-50" style="background-image:url('../img/career.jpg'); background-repeat:no-repeat; background-size:cover;">
+        <br />
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div class="animatedParent">
+                    <div class="section-heading text-center animated bounceInDown" >
+                        <h2 class="h-bold" style="color:#fff;">Career</h2>
+                        <p style="color:#fff;">(For Job Apply mail us: hr@indrayanimilk.com)</p>
+                        <div class="divider-header"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <br />
+
+        
+            <div class="col-md-12">
+                @foreach(TblCareer cc in ViewBag.Career)
+                {
+            <article class="blog-post">	
+
+						<div class="panel panel-success" style="border-color:#3DC9B3">
+    	<div class="panel-heading" style="background-color:#3DC9B3; color:#000; border:#000;">
+        <h3 class="panel-title"><b>@cc.job_title</b></h3>
+   	 	</div>
+    	<div class="panel-body">
+            <b>Date of Post: </b>@cc.job_date_post (YYY/MM/DD).
+            <br/>
+            
+            <b>Last Date: </b>@cc.job_last_date (YYYY/MM/DD).
+            <br/>
+            
+            <b>Experience: </b>@cc.job_expereince yrs.
+            <br/>
+            
+            <b>Job Requirement: </b><span>@cc.job_description</span>.<br />
+            
+            <b>Salary </b>@cc.job_salary /-Rs. +Incentives Per Year
+            <br/>
+            
+            <b>Apply Now:</b><br />
+            <b>Your Mail carrier:</b><br /><b>
+            <a href="https:\\www.gmail.com" target="_blank"> Gmail</a>
+            <a href="https:\\www.yahoo.com" target="_blank"> Yahoo!</a>
+            <a href="www.rediff.com" target="_blank"> Rediffmail</a></b>
+</div>
+		</div>
+				
+					</article>
+                }
+            </div>
+        
+        <br />
+    </div>
+</section>
+

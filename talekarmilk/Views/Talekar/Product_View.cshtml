@@ -1,0 +1,118 @@
+﻿@using talekarmilk.Models;
+@{
+    ViewBag.Title = "Product Detail | Indrayani Milk Marketing";
+    Layout = "~/Views/Shared/_LayoutIndex.cshtml";
+}
+<style type="text/css">
+    
+    table
+    {
+        text-align:center;
+        border-radius:3px;
+        margin-bottom:20px;
+        margin-top:20px;
+    }
+    table, th, td
+    {
+        
+        border:1px;
+        border-style:solid;
+        border-color:black;
+        
+    }
+    th, td
+    {
+        margin:5px;
+        padding:2px;
+        width:200px;
+        text-align:center;
+    }
+    th
+    {
+        background-color:#000;
+        color:#fff;
+    }
+</style>
+
+<section id="service" class="home-section color-dark bg-gray">
+    <div class="container marginbot-50">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <div>
+                    <div class="section-heading text-center">
+                        <h2 class="h-bold">Our Products</h2>
+                        <div class="divider-header"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="text-center">
+        <div class="container">
+            <div class="blog-main three-fourths">
+                <div class="row animatedParent">
+                    <article class="blog-post" style="border: 2px dashed #3DC9B3">
+                        <div class="animated rotateInDownLeft">
+                            <div class="service-box">
+
+                                @foreach (TblProduct a in ViewBag.Product)
+                                {
+                                    if (a.pro_id == ViewBag.pid)
+                                    {
+                    
+                                    <div>
+
+                                        <h5 style="text-align: center; text-transform: uppercase; color: #000;">@a.pro_name</h5>
+                                        <div style="margin-left: 100px;">
+                                            <img src="~/saveimages/@a.pro_image" class="img-responsive" style="width:600px; height:450px;" alt="img">
+                                        </div>
+                                        <p style="text-align:left;">@a.pro_content</p>
+
+                                    </div>
+                        
+                                    }
+                                }
+                                
+                                <table>
+                                    <tr>
+                                        <th>Pack Size</th>
+                                        <th>Pack Prize</th>
+                                    </tr>
+                                    @foreach(TblProductPackage pp in ViewBag.Prize)
+                                    {
+                                        if(ViewBag.pid==pp.pro_id)
+                                        {
+                                    <tr>
+                                        <td>@pp.pack_type </td>
+                                        <td>@pp.pack_prize </td>
+                                        
+                                    </tr>
+                                    }
+                                    }
+                                </table>
+                                    
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+            <aside class="aside one-fourth last">
+                <h6 style="color: #3DC9B3; text-align: center;">Product List</h6>
+
+                <ul style="color: black;">
+                    @foreach (TblProduct aa in ViewBag.Product)
+                    {
+                        <li><span style="text-transform: uppercase;"><a href="~/Talekar/Product_View?prod_id=@aa.pro_id">@aa.pro_name</a></span></li>
+                        <br />
+                    }
+                </ul>
+            </aside>
+
+        </div>
+    </div>
+
+</section>
+
